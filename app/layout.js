@@ -2,6 +2,22 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Provider from './Provider';
 
+import { Roboto, Rubik } from '@next/font/google'
+
+export const roboto = Roboto({
+  variable: '--font-roboto',
+  display: 'swap',
+  subsets: ['latin'],
+  weight: ["100", "300", "400", "500", "700", "900"]
+});
+
+export const rubik = Rubik({
+  variable: '--font-rubik',
+  display: 'swap',
+  subsets: ['latin'],
+  weight: ["300", "400", "500", "700", "900"]
+})
+
 export default function RootLayout({ children }) {
   return (
     <Provider>
