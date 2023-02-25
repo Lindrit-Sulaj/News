@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { rubik } from '@/app/layout';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 function Backdrop({ children, close }) {
   return (
@@ -12,6 +13,8 @@ function Backdrop({ children, close }) {
 }
 
 const Search = ({ isSearching, open, close }) => {
+  const router = useRouter();
+  
   const [searchValues, setSearchValues] = useState({
     query: "",
     domains: "",
@@ -22,6 +25,19 @@ const Search = ({ isSearching, open, close }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    let link = `/search?`
+    
+    for (let param in searchValues) {
+      if (searchValues[param] === "") { continue; }
+      link += `${param}=${searchValues[param]}&`
+    }
+
+    if (link[link.length - 1] === "&") {
+      link = link.slice(0, link.length - 1);
+    }
+
+    close();
+    router.push(link);
   }
 
   return (
