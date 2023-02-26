@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 function Backdrop({ children, close }) {
   return (
-    <div onClick={close} className='absolute bg-[rgba(0,0,0,0.8)] w-full h-screen top-0 left-0 flex items-start justify-center'>
+    <div onClick={close} className='absolute z-50 bg-[rgba(0,0,0,0.8)] w-full h-screen top-0 left-0 flex items-start justify-center'>
       {children}
     </div>
   )
@@ -55,7 +55,7 @@ const Search = ({ isSearching, open, close }) => {
               <input
                 type="text"
                 placeholder='Search for news'
-                className={`w-full h-14 px-4 rounded-md dark:bg-black-dark bg-neutral-200 border-solid border-b-4 border-b-blue-500 outline-none text-white ${rubik.className}`}
+                className={`w-full h-14 px-4 rounded-md dark:bg-black-dark bg-neutral-200 border-solid border-b-4 border-b-blue-500 outline-none text-white dark:text-white-primary ${rubik.className}`}
                 value={searchValues.query}
                 onChange={(e) => setSearchValues({
                   ...searchValues,
@@ -67,7 +67,7 @@ const Search = ({ isSearching, open, close }) => {
                   <label htmlFor="domains" className='block w-full text-neutral-500 dark:text-neutral-300 mb-1'>Domains:</label>
                   <input
                     type="text"
-                    className='block w-full dark:bg-black-dark bg-neutral-200 px-3 py-2 outline-none rounded-md border-solid border-b-2 text-white border-neutral-300  dark:border-black-light'
+                    className='block w-full dark:bg-black-dark bg-neutral-200 px-3 py-2 outline-none rounded-md border-solid border-b-2  border-neutral-300 dark:text-neutral-400 dark:border-black-light'
                     placeholder="Choose domains"
                     value={searchValues.domains}
                     onChange={(e) => setSearchValues({
@@ -77,7 +77,7 @@ const Search = ({ isSearching, open, close }) => {
                 </div>
                 <div className='w-1/2'>
                   <label htmlFor="sortBy" className='block w-full text-neutral-500 dark:text-neutral-300 mb-[6px]'>Sort by:</label>
-                  <select name="sortBy" id="sortBy" className='block w-full bg-neutral-200 px-3 py-2 outline-none rounded-md border-solid border-b-2 text-neutral-400 dark:bg-black-dark border-neutral-300  dark:border-black-light' value={searchValues.sortBy}
+                  <select name="sortBy" id="sortBy" className='block w-full bg-neutral-200 px-3 py-2 outline-none rounded-md border-solid border-b-2 text-neutral-600 dark:text-neutral-400 dark:bg-black-dark border-neutral-300  dark:border-black-light' value={searchValues.sortBy}
                     onChange={(e) => setSearchValues({
                       ...searchValues,
                       sortBy: e.target.value
