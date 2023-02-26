@@ -1,5 +1,5 @@
 import './globals.css';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/nav';
 import Provider from './Provider';
 
 import { Roboto, Rubik } from '@next/font/google'

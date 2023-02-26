@@ -20,6 +20,11 @@ module.exports = {
           "dark": "#202124",
           "medium": "#292A2D",
           "light": "#3c4043"
+        },
+        white: {
+          "primary": "#fff",
+          "secondary": "#f1f3f4",
+          "terciary": "#f6f8fc"
         }
       }
     },
