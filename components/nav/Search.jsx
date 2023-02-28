@@ -45,7 +45,7 @@ const Search = ({ isSearching, open, close }) => {
       {isSearching && (
         <Backdrop close={close}>
           <motion.div
-            className={`w-[85%] md:max-w-xl mt-20 h-auto bg-white-secondary dark:bg-black-medium rounded-md p-6 ${rubik.className}`}
+            className={`w-[90%] md:max-w-xl mt-20 h-auto bg-white-secondary dark:bg-black-medium rounded-md p-3 md:p-6 ${rubik.className}`}
             onClick={(e) => e.stopPropagation()}
             transition={{ type: 'just', duration: .25 }}
             initial={{ scale: .5, opacity: 0 }}
@@ -124,7 +124,7 @@ const Search = ({ isSearching, open, close }) => {
                   sortBy: "",
                   from: "",
                   to: ""
-                })} className='px-6 py-2 bg-neutral-300 dark:bg-black-light text-white rounded-md cursor-pointer dark:text-neutral-50'>Reset</button>
+                })} type="button" className='px-6 py-2 bg-neutral-300 dark:bg-black-light text-white rounded-md cursor-pointer dark:text-neutral-50'>Reset</button>
                 <button type="submit" className='px-6 py-2 bg-blue-500 rounded-md cursor-pointer text-white-primary'>Search</button>
               </div>
             </form>

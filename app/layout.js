@@ -18,6 +18,11 @@ export const rubik = Rubik({
   weight: ["300", "400", "500", "700", "900"]
 })
 
+export const country = {
+  name: "United States",
+  code: "us"
+}
+
 export default function RootLayout({ children }) {
   return (
     <Provider>
@@ -27,10 +32,10 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
         <head />
-        <body className='bg-black-medium h-screen w-full'>
-          <h1>Hello world</h1>
-          p
+        <body className='bg-white-terciary dark:bg-black-medium h-screen w-full pt-[110px]'>
+          
           <Navbar />
+
           {children}
         </body>
       </html>
