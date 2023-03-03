@@ -1,6 +1,5 @@
 import './globals.css';
 import Navbar from '@/components/nav';
-import Provider from './Provider';
 
 import { Roboto, Rubik } from '@next/font/google'
 
@@ -25,20 +24,18 @@ export const country = {
 
 export default function RootLayout({ children }) {
   return (
-    <Provider>
-      <html lang="en">
-        {/*
+    <html lang="en">
+      {/*
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-        <head />
-        <body className='bg-white-terciary dark:bg-black-medium h-screen w-full pt-[110px]'>
-          
-          <Navbar />
+      <head />
+      <body className='bg-white-terciary dark:bg-black-medium h-screen w-full pt-[110px]'>
 
-          {children}
-        </body>
-      </html>
-    </Provider>
+        <Navbar />
+
+        {children}
+      </body>
+    </html>
   )
 }
