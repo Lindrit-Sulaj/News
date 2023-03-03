@@ -7,7 +7,7 @@ async function getSearchResults(searchParams) {
     return `${(param[0] === "query" ? "q" : param[0])}=${param[1].split(" ").join("%20")}`
   }).join("&");
 
-  const res = await fetch(`https://newsapi.org/v2/everything?${params}&pageSize=15&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`, { cache: 'no-store' });
+  const res = await fetch(`https://newsapi.org/v2/everything?${params}&pageSize=15&apiKey=5af37869cbaa419e860ecf01977bb419`, { cache: 'no-store' });
   if (!res.ok) {
     throw new Error("Couldn't fetch data");
   };

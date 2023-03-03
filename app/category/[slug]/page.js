@@ -3,7 +3,7 @@ import { months, days } from '@/app/page';
 import { rubik, roboto } from "@/app/layout";
 
 async function getCategory(category) {
-  const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=15&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`, { cache: 'no-store' });
+  const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=15&apiKey=5af37869cbaa419e860ecf01977bb419`, { cache: 'no-store' });
 
   if (!res.ok) {
     throw new Error("Couldn't fetch data");

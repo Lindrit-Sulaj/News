@@ -6,7 +6,7 @@ export const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sa
 export const months = ["January", "February", "March", "April", "May", "June", "July", "August", "Septemer", "October", "November", "December"]
 
 async function getTopHeadlines() {
-  const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`, { cache: 'no-store' });
+  const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=5af37869cbaa419e860ecf01977bb419`, { cache: 'no-store' });
   if (!res.ok) {
     throw new Error("Error bruh");
   };
