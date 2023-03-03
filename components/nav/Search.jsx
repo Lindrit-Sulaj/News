@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 function Backdrop({ children, close }) {
   return (
-    <div onClick={close} className='absolute z-50 bg-[rgba(0,0,0,0.8)] w-full h-screen top-0 left-0 flex items-start justify-center'>
+    <div onClick={close} className='fixed z-50 bg-[rgba(0,0,0,0.8)] w-full h-screen top-0 left-0  flex items-start justify-center'>
       {children}
     </div>
   )
