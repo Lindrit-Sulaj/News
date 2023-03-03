@@ -7,7 +7,7 @@ import Links from "./Links";
 
 export default function Navbar() {
   const [isSearching, setIsSearching] = useState(false);
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') || false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     if (darkMode === true) {
