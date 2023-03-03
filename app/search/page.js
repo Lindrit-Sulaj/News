@@ -26,7 +26,7 @@ export default async function SearchPage({ searchParams }) {
   return (
     <div className={`${roboto.className} mx-auto max-w-4xl xl:max-w-[1100px] py-8 px-2 md:px-0`}>
       <div className="mb-6">
-        <h1 className="text-xl md:text-2xl font-semibold border-solid border-b-2 border-b-neutral-600 rounded-sm pb-2 dark:text-white-primary">News about {searchParams.query}</h1>
+        <h1 className={`text-xl md:text-2xl font-semibold border-solid border-b-2 border-b-neutral-200 dark:border-b-neutral-600 rounded-sm pb-2 dark:text-white-primary`}>News about {searchParams.query}</h1>
       </div>
       <div className="rounded-3xl flex flex-col gap-4">
         {data.articles.map((article, index) => (

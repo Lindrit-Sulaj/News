@@ -7,13 +7,22 @@ import Links from "./Links";
 
 export default function Navbar() {
   const [isSearching, setIsSearching] = useState(false);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') || false);
+
+  useEffect(() => {
+    if (darkMode === true) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    localStorage.setItem('darkMode', darkMode)
+  }, [darkMode]);
 
   const openSearch = () => setIsSearching(true);
   const closeSearch = () => setIsSearching(false);
 
-  const handleColorSwitch = () => {
-    document.documentElement.classList.toggle('dark')
-  }
+
 
   return (
     <div className="h-auto bg-white-primary absolute top-0 w-full dark:bg-black-dark">
@@ -30,8 +39,12 @@ export default function Navbar() {
           <button className="grow bg-white-terciary dark:bg-black-medium w-10 h-10 flex items-center justify-center text-neutral-600 dark:text-neutral-300 rounded-xl">
             <span className="material-symbols-outlined">settings</span>
           </button>
-          <button onClick={handleColorSwitch} className="text-neutral-600 dark:text-neutral-300 w-10 h-10 flex items-center justify-center">
-            <span className="material-symbols-outlined">dark_mode</span>
+          <button onClick={() => {
+            setDarkMode(!darkMode);
+          }} className="text-neutral-600 dark:text-neutral-300 w-10 h-10 flex items-center justify-center">
+            <span className="material-symbols-outlined">
+              { darkMode ? "light_mode" : "dark_mode" }
+            </span>
           </button>
         </div>
 

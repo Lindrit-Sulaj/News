@@ -10,7 +10,6 @@ export default function Links() {
 
   const routes = {
     home: "/",
-    following: "/following",
     general: "/category/general",
     business: "/category/business",
     science: "/category/science",
