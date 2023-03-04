@@ -50,12 +50,14 @@ function News({ author, source, title, description, url, image, publishedAt, con
 
   return (
     <div className="flex items-center gap-4 bg-white-primary dark:bg-black-dark shadow-md dark:shadow-none rounded-lg p-4">
-      <div className="w-3/4">
-        <h3 className="text-sky-600 font-medium dark:text-sky-400">{source}</h3>
-        <a className="text-lg font-medium dark:text-white-primary" href={url}>{title}</a>
-        <p className={`mt-2 text-neutral-600 dark:text-neutral-400 ${rubik.className}`}>{description}</p>
+      <div className="grow">
+        <h3 className="text-sky-600 text-sm md:text-base font-medium dark:text-sky-400">{source}</h3>
+        <a className="text-[17px] md:text-lg font-medium dark:text-white-primary" href={url}>{title}</a>
+        <p className={`mt-2 text-neutral-600 dark:text-neutral-400 ${rubik.className}`}>{
+          (description.split(' ').length > 16) ? `${description.split(" ").slice(0, 14).join(" ")}...` : description
+        }</p>
       </div>
-      <img className="w-1/4 object-cover rounded-xl dark:text-white-primary" src={image}/>
+      <img className="hidden md:block w-20 h-20 object-cover rounded-xl dark:text-white-primary" src={image}/>
     </div>
   )
 }
