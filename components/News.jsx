@@ -14,9 +14,6 @@ export default function News({ author, title, url, publishedAt, description, cur
     <article className="md:px-3 py-3">
       <h3 className="text-sky-600 dark:text-sky-400 font-medium text-[15px]">{author}</h3>
       <a className={`text-lg dark:text-white-primary mt-1 mb-1 ${roboto.className}`} href={url}>{title}</a>
-      {description && (
-        <p>{description}</p>
-      )}
       <p className={`${rubik.className} text-neutral-600 dark:text-neutral-400`}>
         {
           (formattedDate === currentDate) ? "Today" : formattedDate
